@@ -69,7 +69,7 @@ echo '         "@typescript-eslint",' >> .eslintrc.json
 echo '         "@typescript-eslint/eslint-plugin"' >> .eslintrc.json
 echo '    ],' >> .eslintrc.json
 echo '    "env": {' >> .eslintrc.json
-echo '        "browser": false,' >> .eslintrc.json
+echo '        "browser": true,' >> .eslintrc.json
 echo '        "node": true,' >> .eslintrc.json
 echo '        "commonjs": false,' >> .eslintrc.json
 echo '        "es2021": true,' >> .eslintrc.json
@@ -82,6 +82,7 @@ echo '    ],' >> .eslintrc.json
 echo '    "rules": {' >> .eslintrc.json
 echo '        "quotes": [2, "double"],' >> .eslintrc.json
 echo '        "no-unused-expressions": 0,' >> .eslintrc.json
+echo '        "@typescript-eslint/no-unused-vars": 1,' >> .eslintrc.json
 echo '        "comma-dangle": [2, "always-multiline"],' >> .eslintrc.json
 echo '        "semi": [2, "always"],' >> .eslintrc.json
 echo '        "indent": [2, 4],' >> .eslintrc.json
@@ -89,8 +90,7 @@ echo '        "arrow-parens": [2, "as-needed"],' >> .eslintrc.json
 echo '        "eol-last": 0,' >> .eslintrc.json
 echo '        "no-multiple-empty-lines": [2, { "max": 1, "maxBOF": 0, "maxEOF": 0 }],' >> .eslintrc.json
 echo '        "strict": [2, "global"],' >> .eslintrc.json
-echo '        "no-prototype-builtins": 0,' >> .eslintrc.json
-echo '        "no-unused-vars": 2' >> .eslintrc.json
+echo '        "no-prototype-builtins": 0' >> .eslintrc.json
 echo '    }' >> .eslintrc.json
 echo '}' >> .eslintrc.json
 
@@ -108,7 +108,10 @@ echo '        "moduleResolution": "Node",' >> tsconfig.json
 echo '        "outDir": "'${outDir}'",' >> tsconfig.json
 echo '        "allowJs": false,' >> tsconfig.json
 echo '        "target": "es2021",' >> tsconfig.json
-echo '        "strict": true' >> tsconfig.json
+echo '        "strict": true,' >> tsconfig.json
+echo '        "jsx": "react-jsx",' >> tsconfig.json
+echo '        "jsxImportSource": "preact",' >> tsconfig.json
+echo '        "noImplicitAny": true' >> tsconfig.json
 echo '    },' >> tsconfig.json
 echo '    "include": ["'${include}'"]' >> tsconfig.json
 echo '}' >> tsconfig.json
