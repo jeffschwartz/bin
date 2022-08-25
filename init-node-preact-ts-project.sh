@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/zsh
+#!/pt/homebrew/bin/zsh
 
 #######################################################################
 # This script creates a TypeScript Node project that uses ES modules. #
@@ -11,8 +11,8 @@ red="\033[31m" # color code for red
 green="\033[0;32m" # color code for green
 yellow="\033[0;33m" # color code for yellow
 none="\033[0m" # color code for no color
+rootDir="./src" #tsc input glob
 outDir="./dist" #tsc output direcrory
-include="./src/**/*" #tsc input glob
 src="src"
 dist="dist"
 
@@ -83,7 +83,12 @@ echo '    "rules": {' >> .eslintrc.json
 echo '        "quotes": [2, "double"],' >> .eslintrc.json
 echo '        "no-unused-expressions": 0,' >> .eslintrc.json
 echo '        "@typescript-eslint/no-unused-vars": 1,' >> .eslintrc.json
-echo '        "comma-dangle": [2, "always-multiline"],' >> .eslintrc.json
+echo '        "comma-dangle": ["error", {],' >> .eslintrc.json
+echo '            "arrays": "only-multiline",' >> .eslintrc.json
+echo '            "objects": "only-multiline",' >> .eslintrc.json
+echo '            "imports": "only-multiline",' >> .eslintrc.json
+echo '            "exports": "only-multiline",' >> .eslintrc.json
+echo '            "functions": "never",' >> .eslintrc.json
 echo '        "semi": [2, "always"],' >> .eslintrc.json
 echo '        "indent": [2, 4],' >> .eslintrc.json
 echo '        "arrow-parens": [2, "as-needed"],' >> .eslintrc.json
@@ -105,15 +110,19 @@ echo '{' > tsconfig.json
 echo '    "compilerOptions": {' >> tsconfig.json
 echo '        "module": "ES2020",' >> tsconfig.json
 echo '        "moduleResolution": "Node",' >> tsconfig.json
+echo '        "rootDir": "'${rootDir}'",' >> tsconfig.json
 echo '        "outDir": "'${outDir}'",' >> tsconfig.json
 echo '        "allowJs": false,' >> tsconfig.json
 echo '        "target": "es2021",' >> tsconfig.json
 echo '        "strict": true,' >> tsconfig.json
 echo '        "jsx": "react-jsx",' >> tsconfig.json
 echo '        "jsxImportSource": "preact",' >> tsconfig.json
+echo '        "sourceMap": true,' >> tsconfig.json
+echo '        "noUnusedLocals": true,' >> tsconfig.json
+echo '        "noUnusedParameters": true,' >> tsconfig.json
+echo '        "noImplicitReturns": true,' >> tsconfig.json
 echo '        "noImplicitAny": true' >> tsconfig.json
-echo '    },' >> tsconfig.json
-echo '    "include": ["'${include}'"]' >> tsconfig.json
+echo '    }' >> tsconfig.json
 echo '}' >> tsconfig.json
 
 # Create Directory Structure Matching tsconfig.json
