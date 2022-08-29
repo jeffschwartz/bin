@@ -1,4 +1,4 @@
-#!/pt/homebrew/bin/zsh
+#!/opt/homebrew/bin/zsh
 
 #######################################################################
 # This script creates a TypeScript Node project that uses ES modules. #
