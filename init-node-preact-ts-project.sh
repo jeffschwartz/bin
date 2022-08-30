@@ -83,12 +83,13 @@ echo '    "rules": {' >> .eslintrc.json
 echo '        "quotes": [2, "double"],' >> .eslintrc.json
 echo '        "no-unused-expressions": 0,' >> .eslintrc.json
 echo '        "@typescript-eslint/no-unused-vars": 1,' >> .eslintrc.json
-echo '        "comma-dangle": ["error", {],' >> .eslintrc.json
+echo '        "comma-dangle": ["error", {' >> .eslintrc.json
 echo '            "arrays": "only-multiline",' >> .eslintrc.json
 echo '            "objects": "only-multiline",' >> .eslintrc.json
 echo '            "imports": "only-multiline",' >> .eslintrc.json
 echo '            "exports": "only-multiline",' >> .eslintrc.json
 echo '            "functions": "never",' >> .eslintrc.json
+echo '        }],' >> .eslintrc.json;
 echo '        "semi": [2, "always"],' >> .eslintrc.json
 echo '        "indent": [2, 4],' >> .eslintrc.json
 echo '        "arrow-parens": [2, "as-needed"],' >> .eslintrc.json
@@ -118,7 +119,7 @@ echo '        "strict": true,' >> tsconfig.json
 echo '        "jsx": "react-jsx",' >> tsconfig.json
 echo '        "jsxImportSource": "preact",' >> tsconfig.json
 echo '        "sourceMap": true,' >> tsconfig.json
-echo '        "noUnusedLocals": true,' >> tsconfig.json
+echo '        "noUnusedLocals": false,' >> tsconfig.json;
 echo '        "noUnusedParameters": true,' >> tsconfig.json
 echo '        "noImplicitReturns": true,' >> tsconfig.json
 echo '        "noImplicitAny": true' >> tsconfig.json
